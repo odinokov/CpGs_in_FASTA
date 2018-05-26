@@ -14,7 +14,10 @@ for(i in 1:how_many_records)
   {
   x <- names(dataFiles[[i]])
   ref_ID <- substr(x, nchar(x)-10, nchar(x))
+  # get the number of CpGs
   CpGs <- toString(dataFiles[[i]][[1]][4])
+  # get a FASTA length
+  # toString(dataFiles[[i]][[1]][1:1])
   CpGs <- substring(CpGs, 29)
   CpGs_table <- rbind(CpGs_table, data.frame(Nucleotide_Ref = ref_ID, Number_of_CpGs_in_sequence = CpGs))
   }
